@@ -21,3 +21,7 @@ addresses = ["127.0.0.1"]
 port = 8080
 # Open a browser tab once the initial build is complete.
 open = true
+
+# Add CSS configuration to disable integrity hashes
+[css]
+integrity = false
