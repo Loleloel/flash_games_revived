@@ -39,15 +39,34 @@ jobs:
       - name: Ensure static directories exist
         run: |
           mkdir -p static/assets
+          echo "Created static directories"
+          ls -la
+
+      - name: List Repository Contents
+        run: |
+          find . -type f -name "index.html" -o -name "*.rs" | sort
 
       - name: Build
         run: |
           trunk build --release --public-url /${GITHUB_REPOSITORY#*/}/
+        continue-on-error: false
+
+      - name: Check build output
+        run: |
+          echo "Checking if dist directory exists..."
+          if [ -d "./dist" ]; then
+            echo "dist directory exists"
+            ls -la ./dist
+          else
+            echo "ERROR: dist directory not found!"
+            exit 1
+          fi
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v1
         with:
           path: ./dist
+          name: github-pages
 
   deploy:
     environment:
@@ -59,3 +78,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
+        with:
+          artifact_name: github-pages
