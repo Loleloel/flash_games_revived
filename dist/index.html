@@ -8,13 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <!-- Let Trunk handle the CSS :) -->
+    <!-- Let Trunk handle the CSS -->
     <link rel="icon" href="favicon.ico">
     <meta name="description" content="A platform for Flash-like games reimagined in WebAssembly">
     
 <script type="module">
-import init, * as bindings from '/flash_games_revived-98700c4e3f52a4d6.js';
-const wasm = await init({ module_or_path: '/flash_games_revived-98700c4e3f52a4d6_bg.wasm' });
+import init, * as bindings from '/flash_games_revived/flash_games_revived-e5e82ae764f1df0.js';
+const wasm = await init({ module_or_path: '/flash_games_revived/flash_games_revived-e5e82ae764f1df0_bg.wasm' });
 
 
 window.wasmBindings = bindings;
@@ -23,9 +23,9 @@ window.wasmBindings = bindings;
 dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
 
 </script>
-    <link rel="stylesheet" href="/styles-ddf6dbccf3aeb9fe.css" integrity="sha384&#x2D;e7QxoCSy7&#x2B;eLUdHKiZAdcJ74H8zNUc7NxsNV22z5RzNMaXX&#x2B;Mp1PW1&#x2F;pGEhb2IhQ"/>
+    <link rel="stylesheet" href="/flash_games_revived/styles-ddf6dbccf3aeb9fe.css" integrity="sha384&#x2D;e7QxoCSy7&#x2B;eLUdHKiZAdcJ74H8zNUc7NxsNV22z5RzNMaXX&#x2B;Mp1PW1&#x2F;pGEhb2IhQ"/>
     
-<link rel="modulepreload" href="/flash_games_revived-98700c4e3f52a4d6.js" crossorigin="anonymous" integrity="sha384-KD9kBYNFwKjeJUoRkhaW3K9hu9xh6I2bflIwEQzqF4g0hAOb4M0sEU/UFjdeVpF3"><link rel="preload" href="/flash_games_revived-98700c4e3f52a4d6_bg.wasm" crossorigin="anonymous" integrity="sha384-NowEOfZGOHUqhhDdhzHC8YXh8VXG3MSNDqAcDPtPXC4R3Dx/q97hlq2UOToP/Avs" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="/flash_games_revived/flash_games_revived-e5e82ae764f1df0.js" crossorigin="anonymous" integrity="sha384-cdG06jBPQtLtn4JyFcuYOKWXzQvII+RErn7AWIubpW3v2c+xE8T45ZLvXqb7iyPl"><link rel="preload" href="/flash_games_revived/flash_games_revived-e5e82ae764f1df0_bg.wasm" crossorigin="anonymous" integrity="sha384-mwDKK3QkS1yIEmTSO45IQNr9sGcp3/QB8DGdFWFDugoEPS2NEp8WaVMmItL/oqU/" as="fetch" type="application/wasm"></head>
 <body>
     <div id="app"></div>
 </body>
