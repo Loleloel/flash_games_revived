@@ -13,8 +13,8 @@
     <meta name="description" content="A platform for Flash-like games reimagined in WebAssembly">
     
 <script type="module">
-import init, * as bindings from '/flash_games_revived-2610bd0f5c46cd8c.js';
-const wasm = await init({ module_or_path: '/flash_games_revived-2610bd0f5c46cd8c_bg.wasm' });
+import init, * as bindings from '/flash_games_revived-98700c4e3f52a4d6.js';
+const wasm = await init({ module_or_path: '/flash_games_revived-98700c4e3f52a4d6_bg.wasm' });
 
 
 window.wasmBindings = bindings;
@@ -25,7 +25,7 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
 </script>
     <link rel="stylesheet" href="/styles-ddf6dbccf3aeb9fe.css" integrity="sha384&#x2D;e7QxoCSy7&#x2B;eLUdHKiZAdcJ74H8zNUc7NxsNV22z5RzNMaXX&#x2B;Mp1PW1&#x2F;pGEhb2IhQ"/>
     
-<link rel="modulepreload" href="/flash_games_revived-2610bd0f5c46cd8c.js" crossorigin="anonymous" integrity="sha384-DnTN8WFB12GrdwysHldMcOraOoM7BlKWZJ1XPppFSngIopMEQNQhp2PhIbXxjOZa"><link rel="preload" href="/flash_games_revived-2610bd0f5c46cd8c_bg.wasm" crossorigin="anonymous" integrity="sha384-QqRaS/NHduRkwyQEjdnWsRcr1VabWMWO8wmyE6o7NSpDP9s03AwH6Icw6XlQSRnS" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="/flash_games_revived-98700c4e3f52a4d6.js" crossorigin="anonymous" integrity="sha384-KD9kBYNFwKjeJUoRkhaW3K9hu9xh6I2bflIwEQzqF4g0hAOb4M0sEU/UFjdeVpF3"><link rel="preload" href="/flash_games_revived-98700c4e3f52a4d6_bg.wasm" crossorigin="anonymous" integrity="sha384-NowEOfZGOHUqhhDdhzHC8YXh8VXG3MSNDqAcDPtPXC4R3Dx/q97hlq2UOToP/Avs" as="fetch" type="application/wasm"></head>
 <body>
     <div id="app"></div>
 <script>"use strict";

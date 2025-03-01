@@ -34,7 +34,7 @@ Before you begin, ensure you have the following installed:
 
 1. Clone this repository:
    ```
-   git clone https://your-repository-url/flash_games_revived.git
+   git clone https://github.com/yourusername/flash_games_revived.git
    cd flash_games_revived
    ```
 
@@ -55,6 +55,29 @@ trunk build --release
 
 The compiled assets will be available in the `dist` directory.
 
+## Deployment to GitHub Pages
+
+This project is configured to automatically deploy to GitHub Pages when you push changes to the main branch. The deployment process:
+
+1. Builds the project with Trunk in release mode
+2. Configures the correct public URL paths for GitHub Pages
+3. Deploys the contents of the `dist` directory to GitHub Pages
+
+To set up GitHub Pages for your repository:
+
+1. Go to your repository on GitHub
+2. Navigate to Settings > Pages
+3. Under "Source", select "GitHub Actions" 
+4. Push your code to GitHub:
+   ```
+   git add .
+   git commit -m "Setup GitHub Pages deployment"
+   git push origin main
+   ```
+5. Check the Actions tab on GitHub to monitor the deployment progress
+
+The site will be available at: `https://yourusername.github.io/flash_games_revived/`
+
 ## Project Structure
 
 - `src/` - Rust source code
@@ -66,6 +89,7 @@ The compiled assets will be available in the `dist` directory.
 - `static/` - Static assets (HTML, CSS, images)
 - `Trunk.toml` - Trunk configuration
 - `Cargo.toml` - Rust dependencies and project configuration
+- `.github/workflows/` - GitHub Actions workflows for deployment
 
 ## Contributing
 

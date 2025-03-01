@@ -1,12 +1,15 @@
 use yew::prelude::*;
 use yew_router::prelude::*;
 
-use crate::router::{Route, switch};
+use crate::router::{Route, switch, get_base_url};
 
 #[function_component(App)]
 pub fn app() -> Html {
+    // Get the base URL that adapts to GitHub Pages or local development
+    let base_url = get_base_url();
+    
     html! {
-        <BrowserRouter>
+        <BrowserRouter basename={base_url}>
             <div class="app-container">
                 <header class="app-header">
                     <div class="header-left">
