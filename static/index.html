@@ -8,16 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <!-- Let Trunk handle the CSS -->
     <link rel="icon" href="favicon.ico">
     <meta name="description" content="A platform for Flash-like games reimagined in WebAssembly">
-    <!-- When deploying, add this to preload WASM -->
-    <!-- <link rel="preload" href="flash_games_revived_bg.wasm" as="fetch" type="application/wasm" crossorigin="anonymous"> -->
     <link data-trunk rel="rust" href="../Cargo.toml" data-wasm-opt="z" />
     <link data-trunk rel="css" href="styles.css" />
+    <link data-trunk rel="copy-dir" href="assets" />
 </head>
 <body>
     <div id="app"></div>
-    <!-- The Rust WASM bundle will be loaded here -->
 </body>
 </html>

@@ -8,15 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <!-- Let Trunk handle the CSS -->
     <link rel="icon" href="favicon.ico">
     <meta name="description" content="A platform for Flash-like games reimagined in WebAssembly">
-    <!-- When deploying, add this to preload WASM -->
-    <!-- <link rel="preload" href="flash_games_revived_bg.wasm" as="fetch" type="application/wasm" crossorigin="anonymous"> -->
     
 <script type="module">
-import init, * as bindings from '/flash_games_revived-527b4687f043540b.js';
-const wasm = await init({ module_or_path: '/flash_games_revived-527b4687f043540b_bg.wasm' });
+import init, * as bindings from '/flash_games_revived-2610bd0f5c46cd8c.js';
+const wasm = await init({ module_or_path: '/flash_games_revived-2610bd0f5c46cd8c_bg.wasm' });
 
 
 window.wasmBindings = bindings;
@@ -25,11 +23,11 @@ window.wasmBindings = bindings;
 dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
 
 </script>
-    <link rel="stylesheet" href="/styles-d9be877296f1144e.css" integrity="sha384&#x2D;FBjKv6R5YyGVfBeeeGdOWD4BbT6&#x2B;u&#x2F;UQZsWjM1fyBS2ds2Um6nmq24uUhwr7IlMH"/>
-<link rel="modulepreload" href="/flash_games_revived-527b4687f043540b.js" crossorigin="anonymous" integrity="sha384-KF2AL5epRgbaEY8fak/ZHkZxzA775XGD8e13r1ir0W0u9H6kDtcNc7C7F6Zy2OyK"><link rel="preload" href="/flash_games_revived-527b4687f043540b_bg.wasm" crossorigin="anonymous" integrity="sha384-mosrCIFz0qrjPBq2aWWWXp8WCT8bWp66FZeX7gvOorgXA+II99Gk7R/UTMk//YJs" as="fetch" type="application/wasm"></head>
+    <link rel="stylesheet" href="/styles-ddf6dbccf3aeb9fe.css" integrity="sha384&#x2D;e7QxoCSy7&#x2B;eLUdHKiZAdcJ74H8zNUc7NxsNV22z5RzNMaXX&#x2B;Mp1PW1&#x2F;pGEhb2IhQ"/>
+    
+<link rel="modulepreload" href="/flash_games_revived-2610bd0f5c46cd8c.js" crossorigin="anonymous" integrity="sha384-DnTN8WFB12GrdwysHldMcOraOoM7BlKWZJ1XPppFSngIopMEQNQhp2PhIbXxjOZa"><link rel="preload" href="/flash_games_revived-2610bd0f5c46cd8c_bg.wasm" crossorigin="anonymous" integrity="sha384-QqRaS/NHduRkwyQEjdnWsRcr1VabWMWO8wmyE6o7NSpDP9s03AwH6Icw6XlQSRnS" as="fetch" type="application/wasm"></head>
 <body>
     <div id="app"></div>
-    <!-- The Rust WASM bundle will be loaded here -->
 <script>"use strict";
 
 (function () {

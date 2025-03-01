@@ -1,5 +1,5 @@
 /* Theme variables */
-:root[data-theme="light"] {
+:root {
     --bg-primary: #0a0a15;
     --bg-secondary: #141428;
     --bg-header: #1a1a3a;
@@ -18,27 +18,7 @@
     --neon-glow: 0 0 10px rgba(0, 255, 255, 0.5);
     --header-glow: 0 0 20px rgba(0, 255, 255, 0.2);
     --card-glow: 0 0 15px rgba(0, 255, 255, 0.1);
-}
-
-:root[data-theme="dark"] {
-    --bg-primary: #000010;
-    --bg-secondary: #0a0a20;
-    --bg-header: #12122a;
-    --bg-hero: linear-gradient(135deg, #1a0033 0%, #2b0055 100%);
-    --text-primary: #c8c8ff;
-    --text-secondary: #8080b3;
-    --text-header: #00ffff;
-    --link-color: #00ff99;
-    --border-color: #2a2a4d;
-    --card-shadow: rgba(0, 255, 255, 0.15);
-    --button-primary: #00aaff;
-    --button-primary-hover: #00ddff;
-    --button-play: #ff2400;
-    --button-play-hover: #ff4800;
-    --coming-soon: #3a3a7c;
-    --neon-glow: 0 0 10px rgba(0, 255, 255, 0.3);
-    --header-glow: 0 0 20px rgba(0, 255, 255, 0.15);
-    --card-glow: 0 0 15px rgba(0, 255, 255, 0.08);
+    --nav-highlight: #ff00ff;
 }
 
 @font-face {
@@ -46,25 +26,6 @@
     font-style: normal;
     font-weight: 400;
     src: url(https://fonts.gstatic.com/s/pressstart2p/v15/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2) format('woff2');
-}
-
-/* Default to light theme */
-:root {
-    --bg-primary: #f5f5f5;
-    --bg-secondary: #ffffff;
-    --bg-header: #2c3e50;
-    --bg-hero: #34495e;
-    --text-primary: #333333;
-    --text-secondary: #666666;
-    --text-header: #ffffff;
-    --link-color: #0066cc;
-    --border-color: #dddddd;
-    --card-shadow: rgba(0, 0, 0, 0.1);
-    --button-primary: #3498db;
-    --button-primary-hover: #2980b9;
-    --button-play: #e74c3c;
-    --button-play-hover: #c0392b;
-    --coming-soon: #7f8c8d;
 }
 
 /* Reset and base styles */
@@ -108,28 +69,6 @@ a:hover {
     text-decoration: none;
 }
 
-/* Theme toggle button */
-.theme-toggle {
-    background: rgba(0, 255, 255, 0.1);
-    border: 1px solid var(--text-header);
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: var(--neon-glow);
-}
-
-.theme-toggle:hover {
-    background-color: rgba(0, 255, 255, 0.2);
-    transform: scale(1.1);
-}
-
 /* App structure */
 .app-container {
     display: flex;
@@ -154,11 +93,7 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 2rem;
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
+    width: 100%;
 }
 
 .app-header h1 {
@@ -169,40 +104,109 @@ a:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: none;
+    position: relative;
+    padding-right: 1rem;
 }
 
-.app-header nav {
+.app-header h1::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 80%;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--text-header), transparent);
+}
+
+/* Cyberpunk Navigation */
+.cyberpunk-nav {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
-.app-header nav a {
+.cyberpunk-nav a {
     color: var(--text-header);
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     position: relative;
     border: 1px solid transparent;
+    overflow: hidden;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    text-shadow: 0 0 5px var(--text-header);
 }
 
-.app-header nav a:hover {
-    border-color: var(--text-header);
-    box-shadow: var(--neon-glow);
+.cyberpunk-nav a:hover,
+.cyberpunk-nav a:focus {
+    color: var(--nav-highlight);
+    border-color: var(--nav-highlight);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
     transform: translateY(-2px);
 }
 
-.app-header nav a:after {
+.cyberpunk-nav a:before {
     content: '';
     position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: white;
-    transition: width 0.2s;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 0, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
 }
 
-.app-header nav a:hover:after {
-    width: 100%;
+.cyberpunk-nav a:hover:before {
+    left: 100%;
+}
+
+.nav-text {
+    position: relative;
+    z-index: 1;
+}
+
+.nav-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 255, 0.1),
+        transparent
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cyberpunk-nav a:hover .nav-glow {
+    opacity: 1;
+    animation: navPulse 2s infinite;
+}
+
+@keyframes navPulse {
+    0% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.2;
+    }
 }
 
 main {

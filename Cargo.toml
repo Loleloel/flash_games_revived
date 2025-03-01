@@ -7,7 +7,14 @@ authors = ["You"]
 
 [dependencies]
 yew = { version = "0.20", features = ["csr"] }
-# web-sys = "0.3"
+web-sys = { version = "0.3", features = [
+  "HtmlCanvasElement",
+  "Window", 
+  "Document",
+  "Element",
+  "HtmlElement",
+  "console"
+]}
 wasm-bindgen = "0.2"
 wasm-logger = "0.2"
 log = "0.4"
@@ -19,17 +26,3 @@ js-sys = "0.3"
 
 # Router for SPA navigation
 yew-router = "0.17"
-
-[dependencies.web-sys]
-version = "0.3"
-features = [
-  "HtmlCanvasElement",
-  "Window", 
-  "Document",
-  "Element",
-  "HtmlElement",
-  "console"
-]
-
-[lib]
-crate-type = ["cdylib", "rlib"]

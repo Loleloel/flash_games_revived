@@ -1,5 +1,3 @@
-use wasm_logger;
-
 mod app;
 mod components;
 mod pages;
