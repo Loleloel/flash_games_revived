@@ -30,3 +30,6 @@ features = [
   "HtmlElement",
   "console"
 ]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
