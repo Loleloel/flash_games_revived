@@ -6,6 +6,8 @@ release = false
 # The output dir for all final assets.
 dist = "dist"
 # The public URL from which assets are to be served.
+# For local development keep it as "/"
+# GitHub Actions workflow will override this with the correct path during deployment
 public_url = "/"
 
 [watch]
